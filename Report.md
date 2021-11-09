@@ -17,6 +17,7 @@ with soft-update and an un-prioritized experience replay buffer. This fairly
 simple algorithm is an improvement over DQN, when working with continuous
 action spaces.
 
+
 ### Hyper-parameters
 
 It took some effort to find a set of working hyper-parameters. However, that
@@ -86,22 +87,25 @@ because we can only have positive rewards
 
 ## Future Work
 
-During the exploration track I found on several occasions, that the agent had a
-hard time picking up speed on training. In particular, it seemed that for a
-long time, episodes with 0 reward kept appearing. It would be interesting to
-check whether prioritized experience replay could avoid such episodes, or even
-improve learning speed. 
+This uses the most simple DDPG algorithm without any optimizations or extensions. 
 
-It would also be a blast to try different methods for getting the overall
-highest performance, not just beating a score of 13, but trying to maximise the
-overall score, say on a 2000 episode training run. Here it would be possible to
-benchmark different algorithm improvements against each other, fx Double DQN [2] or
-dueling DQN [3], or mixtures of these with/without prioritized experience replay.
+DDPG is an off-policy algorithm, which means that a replay buffer is useful. It
+also means that cause-and-effect is not as easily learned through multiple
+steps. Here we use a 1-step bootstrap (Temporal-difference loss). For an
+on-policy method, like A3C or A2C it would've been possible to record longer
+trajectories, and more accurately record the expected return. 
+
+In this solution I used the 20 agents environment as a way to sample 20 actions
+at the same time from the same actor, this would also have been possible with
+A2C, so I would probably have started with that algorithm for an on-policy
+agent.
 
 # References
 
-[1] Mnih, V., Kavukcuoglu, K., Silver, D. et al. Human-level control through deep reinforcement learning. Nature 518, 529–533 (2015). https://doi.org/10.1038/nature14236
+[1] DDPG
+Mnih, V., Kavukcuoglu, K., Silver, D. et al. Human-level control through deep reinforcement learning. Nature 518, 529–533 (2015). https://doi.org/10.1038/nature14236
 
-[2] van Hasselt, H. et al. Deep Reinforcement Learning with Double Q-learning. arXiv:1509.06461
+[2] OU noise and white noise
+van Hasselt, H. et al. Deep Reinforcement Learning with Double Q-learning. arXiv:1509.06461
 
 [3] Wang, Z. et al. Dueling Network Architectures for Deep Reinforcement Learning. arXiv:1511.06581
