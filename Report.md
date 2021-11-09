@@ -109,5 +109,4 @@ agent.
 
 [1] Lillicrap, T. P. et al. Continuous control with deep reinforcement learning. arXiv:1509.02971v6
 
-[2] 
-
+[2] Fujimoto, S. et al. Addressing Function Approximation Error in Actor-Critic Methods. arXiv:1802.09477v3
