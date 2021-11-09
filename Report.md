@@ -5,8 +5,13 @@ specialisation. The report summarizes the solution of the Continuous Control pro
 
 ## Results
 
-The environment was solved in 30 episodes.
-The agent scores along with rolling average is seen in the figure below:
+The environment was solved in 30 episodes, however at this point, the agent was
+still improving its policy. At 70 episodes a stable maximum of about 36 points
+were achieved.
+
+The averaged agent scores for each episode (averaged over the 20 parallel arms)
+is shown in blue. The rolling average for the previous 100 episodes is the red
+line, and the dashed green line is the target/solvbed score. 
 
 ![Scores](scores.png)
 
