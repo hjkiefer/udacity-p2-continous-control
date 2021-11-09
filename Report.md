@@ -107,10 +107,7 @@ agent.
 
 # References
 
-[1] DDPG
-Mnih, V., Kavukcuoglu, K., Silver, D. et al. Human-level control through deep reinforcement learning. Nature 518, 529–533 (2015). https://doi.org/10.1038/nature14236
+[1] Lillicrap, T. P. et al. Continuous control with deep reinforcement learning. arXiv:1509.02971v6
 
-[2] OU noise and white noise
-van Hasselt, H. et al. Deep Reinforcement Learning with Double Q-learning. arXiv:1509.06461
+[2] 
 
-[3] Wang, Z. et al. Dueling Network Architectures for Deep Reinforcement Learning. arXiv:1511.06581
